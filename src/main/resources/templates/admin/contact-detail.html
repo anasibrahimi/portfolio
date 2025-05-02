@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Message | Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gray-800 text-white">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold">Portfolio Admin</h1>
+            </div>
+            <nav class="mt-6">
+                <a href="/admin" class="flex items-center py-3 px-4 hover:bg-gray-700">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/admin/projects" class="flex items-center py-3 px-4 hover:bg-gray-700">
+                    <i class="fas fa-project-diagram mr-3"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="/admin/skills" class="flex items-center py-3 px-4 hover:bg-gray-700">
+                    <i class="fas fa-code mr-3"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="/admin/contacts" class="flex items-center py-3 px-4 bg-gray-700">
+                    <i class="fas fa-envelope mr-3"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="/" class="flex items-center py-3 px-4 hover:bg-gray-700 mt-8">
+                    <i class="fas fa-eye mr-3"></i>
+                    <span>View Site</span>
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="flex-1 overflow-auto">
+            <header class="bg-white shadow">
+                <div class="py-4 px-6 flex justify-between items-center">
+                    <h2 class="text-xl font-semibold">View Message</h2>
+                    <a href="/admin/contacts" class="text-blue-500 hover:text-blue-700">
+                        <i class="fas fa-arrow-left mr-1"></i> Back to Messages
+                    </a>
+                </div>
+            </header>
+            
+            <main class="p-6">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="mb-6 pb-6 border-b border-gray-200">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2" th:text="${contact.subject}">Message Subject</h3>
+                                <p class="text-gray-500">
+                                    From: <span class="font-medium text-gray-700" th:text="${contact.name}">Sender Name</span> 
+                                    (<a th:href="'mailto:' + ${contact.email}" class="text-blue-500 hover:underline" th:text="${contact.email}">email@example.com</a>)
+                                </p>
+                                <p class="text-gray-500 text-sm mt-1" th:text="${#dates.format(contact.createdAt, 'MMMM dd, yyyy HH:mm')}">Date</p>
+                            </div>
+                            <div>
+                                <span th:if="${contact.read}" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                    <i class="fas fa-envelope-open mr-1"></i> Read
+                                </span>
+                                <span th:unless="${contact.read}" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                    <i class="fas fa-envelope mr-1"></i> New
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-medium mb-3">Message</h4>
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg whitespace-pre-wrap" th:text="${contact.message}">
+                            Message content goes here.
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <a th:href="'mailto:' + ${contact.email}" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                            <i class="fas fa-reply mr-2"></i> Reply via Email
+                        </a>
+                        <a th:href="@{/admin/contacts/delete/{id}(id=${contact.id})}" 
+                           class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+                           onclick="return confirm('Are you sure you want to delete this message?')">
+                            <i class="fas fa-trash-alt mr-2"></i> Delete Message
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

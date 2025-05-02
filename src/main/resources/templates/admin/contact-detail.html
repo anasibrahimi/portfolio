@@ -37,7 +37,7 @@
                 </a>
             </nav>
         </div>
-        
+
         <!-- Main Content -->
         <div class="flex-1 overflow-auto">
             <header class="bg-white shadow">
@@ -48,7 +48,7 @@
                     </a>
                 </div>
             </header>
-            
+
             <main class="p-6">
                 <div class="bg-white rounded-lg shadow p-6">
                     <div class="mb-6 pb-6 border-b border-gray-200">
@@ -56,7 +56,7 @@
                             <div>
                                 <h3 class="text-xl font-semibold mb-2" th:text="${contact.subject}">Message Subject</h3>
                                 <p class="text-gray-500">
-                                    From: <span class="font-medium text-gray-700" th:text="${contact.name}">Sender Name</span> 
+                                    From: <span class="font-medium text-gray-700" th:text="${contact.name}">Sender Name</span>
                                     (<a th:href="'mailto:' + ${contact.email}" class="text-blue-500 hover:underline" th:text="${contact.email}">email@example.com</a>)
                                 </p>
                                 <p class="text-gray-500 text-sm mt-1" th:text="${#dates.format(contact.createdAt, 'MMMM dd, yyyy HH:mm')}">Date</p>
@@ -71,19 +71,19 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mb-6">
                         <h4 class="text-lg font-medium mb-3">Message</h4>
                         <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg whitespace-pre-wrap" th:text="${contact.message}">
                             Message content goes here.
                         </div>
                     </div>
-                    
+
                     <div class="flex justify-between">
                         <a th:href="'mailto:' + ${contact.email}" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
                             <i class="fas fa-reply mr-2"></i> Reply via Email
                         </a>
-                        <a th:href="@{/admin/contacts/delete/{id}(id=${contact.id})}" 
+                        <a th:href="@{/admin/contacts/delete/{id}(id=${contact.id})}"
                            class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
                            onclick="return confirm('Are you sure you want to delete this message?')">
                             <i class="fas fa-trash-alt mr-2"></i> Delete Message

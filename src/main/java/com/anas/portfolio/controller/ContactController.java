@@ -13,21 +13,21 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/admin/contacts")
 public class ContactController {
-    
+
     @Autowired
     private ContactService contactService;
-    
+
     @GetMapping
     public String listContacts(Model model) {
         model.addAttribute("contacts", contactService.getAllContacts());
         model.addAttribute("unreadCount", contactService.getUnreadCount());
         return "admin/contact-list";
     }
-    
+
     @GetMapping("/{id}")
     public String viewContact(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Optional<Contact> contactOpt = contactService.getContactById(id);
-        
+
         if (contactOpt.isPresent()) {
             Contact contact = contactOpt.get();
             // Mark as read if it's not already
@@ -41,7 +41,7 @@ public class ContactController {
             return "redirect:/admin/contacts";
         }
     }
-    
+
     @GetMapping("/delete/{id}")
     public String deleteContact(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         contactService.deleteContact(id);

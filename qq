@@ -1,0 +1,42 @@
+[33mcommit 92acfd098ea62aac7a804f9a4867375e2027e712[m[33m ([m[1;35mrefs/stash[m[33m)[m
+Merge: 01e2f42 148d350 2f3f8e8
+Author: Anas <anas.ibrahimi@gmail.com>
+Date:   Fri May 2 17:48:33 2025 +0100
+
+    WIP on main: 01e2f42 add environment variables for security
+
+[33mcommit 2f3f8e808c6dbf6db3461d561f3def514017b94e[m[33m ([m[1;36mHEAD[m[33m)[m
+Author: Anas <anas.ibrahimi@gmail.com>
+Date:   Fri May 2 17:48:33 2025 +0100
+
+    untracked files on main: 01e2f42 add environment variables for security
+
+[33mcommit 148d35067ca6dcd4c0c2d4e990744247fd9b95ff[m
+Author: Anas <anas.ibrahimi@gmail.com>
+Date:   Fri May 2 17:48:33 2025 +0100
+
+    index on main: 01e2f42 add environment variables for security
+
+[33mcommit 01e2f42640b693afd72355a1f1f0fe114968eb41[m[33m ([m[1;31mport/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: Anas <anas.ibrahimi@gmail.com>
+Date:   Fri May 2 17:12:30 2025 +0100
+
+    add environment variables for security
+
+[33mcommit 76ed0301d00aeddc16940df27430dd586b363f6d[m
+Author: Anas <anas.ibrahimi@gmail.com>
+Date:   Fri May 2 16:54:06 2025 +0100
+
+    Add Maven wrapper
+
+[33mcommit eaf3979a09da4c2978ff58a48f871aade6af99a8[m
+Author: Anas <anas.ibrahimi@gmail.com>
+Date:   Fri May 2 16:28:54 2025 +0100
+
+    adding environment variables for security.
+
+[33mcommit 0a8b1aa1ff0ca793ada524538e49ef3c25548994[m
+Author: Anas <anas.ibrahimi@gmail.com>
+Date:   Fri May 2 02:59:59 2025 +0100
+
+    initial version

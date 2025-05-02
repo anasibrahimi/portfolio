@@ -18,25 +18,26 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Contact {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String name;
-    
+
     private String email;
-    
+
     private String subject;
-    
+
     @Column(length = 2000)
     private String message;
-    
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
-    
+
+    @Column(name = "is_read")
     private boolean read;
-    
+
     // Initialize with current date and unread status
     public Contact(String name, String email, String subject, String message) {
         this.name = name;

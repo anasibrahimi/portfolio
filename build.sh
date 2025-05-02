@@ -1,3 +1,3 @@
 #!/bin/bash
 chmod +x mvnw
-./mvnw clean package -DskipTests
+./mvnw clean install -DskipTests

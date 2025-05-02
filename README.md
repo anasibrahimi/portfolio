@@ -2,6 +2,31 @@
 
 A personal portfolio web application built with Spring Boot.
 
+## Deployment on Railway
+
+This application is configured for easy deployment on Railway. The following files are included for Railway deployment:
+
+- `Procfile`: Tells Railway how to run the application
+- `system.properties`: Specifies the Java version
+- `railway.json`: Contains Railway-specific configuration
+
+### Deploying to Railway
+
+1. Create a Railway account at [railway.app](https://railway.app/)
+2. Install the Railway CLI: `npm i -g @railway/cli`
+3. Login to Railway: `railway login`
+4. Link your project: `railway link`
+5. Deploy your application: `railway up`
+
+### Environment Variables on Railway
+
+Set the following environment variables in the Railway dashboard:
+
+1. `SPRING_PROFILES_ACTIVE=prod`
+2. Database configuration variables (Railway will provide these if you add a MySQL plugin)
+3. Admin credentials
+4. Any other required environment variables
+
 ## Environment Variables for Security
 
 This application uses environment variables for security in production. This approach helps protect sensitive information like database credentials and admin passwords from being exposed in the codebase.

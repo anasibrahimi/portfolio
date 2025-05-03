@@ -1,0 +1,42 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Build files
+target/
+build/
+*.class
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.settings/
+.project
+.classpath
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Docker files
+docker-compose*.yml
+Dockerfile*
+
+# Temporary files
+tmp/
+temp/
+
+# Uploads directory (will be created in the container)
+uploads/
+
+# Maven wrapper jar (will be downloaded during build)
+.mvn/wrapper/maven-wrapper.jar
